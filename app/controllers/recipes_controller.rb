@@ -4,7 +4,7 @@ MAX_GENES = 6 # max length for sandwiches
 MAX_QUANTITY = 5 # Maximum quantity for an ingredient
 ELITISM = true
 CROSSOVER_RATE = 0.6 # 60% chance that two parents will reproduce.
-MICRO_MUTATION_RATE = 0.2 # should be way lower
+MICRO_MUTATION_RATE = 0.3 # should be way lower
 MACRO_MUTATION_RATE = 0.1 # should be way lower
 TOURNAMENT_SIZE = 2
 SELECTION_RATIO = 0.7 # chance fittest recipe selected in tournament
@@ -87,15 +87,15 @@ class Algorithm
       end
 
       # TODO: Weird array issue, not hugely important for testing.
-      # gene = sandwich.get_gene(i)
-      # inc_or_dec = rand
-      # if rand <= MICRO_MUTATION_RATE && gene > 0 # can only micro mutate existing ingredients
-      #   sandwich.set_gene(i, gene + 1) if inc_or_dec > 0.5 && gene < MAX_QUANTITY
-      #   sandwich.set_gene(i, gene - 1) if inc_or_dec < 0.5 && gene > 1
-      # end
+      gene = sandwich.get_gene(i)
+      inc_or_dec = rand
+      if rand <= MICRO_MUTATION_RATE && gene > 0 # can only micro mutate existing ingredients
+        sandwich.set_gene(i, gene + 1) if inc_or_dec > 0.5 && gene < MAX_QUANTITY
+        sandwich.set_gene(i, gene - 1) if inc_or_dec < 0.5 && gene > 1
+      end
     end
     sandwich
-    end
+  end
 end
 
 # Digital Representation of real life sandwich recipe
