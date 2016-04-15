@@ -1,4 +1,4 @@
-ING_DATABASE_SIZE = Ingredient.count
+@@ing_database_size = Ingredient.count
 GENE_LENGTH = 4 # initial length for sandwiches
 MAX_GENES = 6 # max length for sandwiches
 MAX_QUANTITY = 5 # Maximum quantity for an ingredient
@@ -106,7 +106,7 @@ class Sandwich
   def initialize
     @gene_length = GENE_LENGTH
     @fitness = 0
-    @genes = Array.new(ING_DATABASE_SIZE, 0)
+    @genes = Array.new(@@ing_database_size, 0)
   end
 
   def generate_sandwich
@@ -116,7 +116,7 @@ class Sandwich
     ingredients_added = 0
     # RANDOM GENERATION START
     while ingredients_added < GENE_LENGTH # while we don't have enough ingredients
-      database_pointer = 0 if database_pointer == ING_DATABASE_SIZE
+      database_pointer = 0 if database_pointer == @@ing_database_size
 
       if rand <= 0.35 && ingredients_added < GENE_LENGTH && @genes[database_pointer] == 0
         @genes[database_pointer] = rand(4)+1 # gene initialized with random quantity, 1 -> 5
@@ -144,7 +144,7 @@ class Sandwich
   end
 
   def set_gene(index, value)
-    if index >= ING_DATABASE_SIZE || index < 0
+    if index >= @@ing_database_size || index < 0
       raise 'Index out of bounds, make sure 0 <= index <= ING_DATABASE_SIZE'
     end
     @genes[index] = value
@@ -166,7 +166,7 @@ class Sandwich
   def ing_db_keys # returns array of ints representing ingredient ids
     ingredient_ids = []
 
-    (1..ING_DATABASE_SIZE).each do |i|
+    (1..@@ing_database_size).each do |i|
       # find id for ingredient if it is in sandwich
       ingredient_ids.push(i) if @genes[i-1] > 0 # offset because of database IDs
     end
@@ -196,16 +196,43 @@ class Population
     @sandwiches = Array.new(pop_size, Sandwich.new)
 
     if generate_recipes && ings == nil # Entirely random recipes
-      puts 'ENTIRELY RANDOM'
       (0...size).each do |i|
         new_sandwich = Sandwich.new
         new_sandwich.generate_sandwich
         save_sandwich(i, new_sandwich)
       end
     elsif not(ings == nil) # Recipes containing mentioned ingredients
-      puts 'DIRECTED BY INGREDIENT'
-      unformatted_recipes = Yummly.search(ings)
-      puts 'Test with ' + ings + ' resulted in ' + unformatted_recipes.total.to_s + ' recipes'
+      result = Yummly.search(ings)
+      yummly_recipes = result.collect{ |recipe| recipe }
+
+      # Update ing DB before sandwiches made to ensure gene length is uniform
+      update_ing_db(yummly_recipes)
+      @@ing_database_size = Ingredient.count
+
+      (0...size).each do |i|
+        save_sandwich(i, build_sandwich(yummly_recipes[i].ingredients))
+      end
+    end
+  end
+
+  def update_ing_db(recipes)
+    recipes.each do |recipe|
+      recipe.ingredients.each do |ing|
+        # populate database to update sizes
+        ing_to_check = Ingredient.find_by(ing_name: ing)
+        if ing_to_check == nil
+          Ingredient.create!(ing_name: ing.downcase)
+        end
+      end
+    end
+  end
+
+  # If yummly search was done, take ingredients and build a sandwich
+  def build_sandwich(ingredients)
+    sandwich = Sandwich.new
+    ingredients.each do |ing|
+      gene_index = Ingredient.find_by(ing_name: ing).id - 1 #offset for db starting at 1
+      sandwich.set_gene(gene_index, 1) # add one of the chosen ingredient
     end
   end
 
@@ -251,6 +278,7 @@ class FitnessCalc
   def self.goog_fitness_calc(sandwich)
     search = sandwich.get_query_string
     if sandwich.get_query_string.include?('bread')
+
       # Check to see if we've already searched this
       db_check = SearchCombination.find_by(query_name: search)
       if db_check == nil # If it's not been searched before
@@ -325,24 +353,22 @@ class RecipesController < ApplicationController
   def create
     # RECIPE CREATING
     if recipe_params.fetch('recipe_name').blank?
-      puts "NAME WAS BLANK"
       my_pop = Population.new(10, true)
     else # If an ingredient was, given have initial pop be from Yummly
-      puts "NAME WAS GOOD"
       my_pop = Population.new(10, false, recipe_params.fetch('recipe_name'))
     end
 
-    # (0...10).each do |i|
-    #   my_pop = Algorithm.evolve_population(my_pop)
-    # end
-    # best_sandwich = my_pop.get_best_sandwich
-    #
-    # puts "RECIPE PARAMS: " + recipe_params.fetch('recipe_name')
+    (0...5).each do |i|
+       my_pop = Algorithm.evolve_population(my_pop)
+    end
+    best_sandwich = my_pop.get_best_sandwich
 
     # RECIPE SAVING
-    @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.new(name_maker(best_sandwich))
+
     respond_to do |format|
       if @recipe.save
+        save_ing_links(@recipe.id, best_sandwich)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
@@ -398,5 +424,18 @@ class RecipesController < ApplicationController
         ing_quant_pairs.push([ing, quant])
       end
       ing_quant_pairs
+    end
+
+    def name_maker(sandwich)
+      ing_ids = sandwich.ing_db_keys
+      name = Ingredient.find_by(ing_ids[rand(ing_ids.size)]).to_s + ', '
+      name += Ingredient.find_by(ing_ids[rand(ing_ids.size)]).to_s + ' and '
+      name += Ingredient.find_by(ing_ids[rand(ing_ids.size)]).to_s + ' '
+      name += 'sandwich'
+      name
+    end
+
+    def save_ing_links(recipe_id, sandwich_genes)
+      
     end
 end
