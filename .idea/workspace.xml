@@ -14,7 +14,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Recipe_hack_final@Development__Recipe_hack_final.coverage" NAME="Development: Recipe_hack_final Coverage Results" MODIFIED="1460730534065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
+    <SUITE FILE_PATH="coverage/Recipe_hack_final@Development__Recipe_hack_final.coverage" NAME="Development: Recipe_hack_final Coverage Results" MODIFIED="1460732757117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
     <SUITE FILE_PATH="coverage/Recipe_hack_final@db_migrate__Recipe_hack_final.coverage" NAME="db:migrate: Recipe_hack_final Coverage Results" MODIFIED="1460728157230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -45,7 +45,7 @@
     <favorites_list name="Recipe_hack_final" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.5822785">
+    <splitter split-orientation="vertical" split-proportion="0.6963351">
       <split-first>
         <splitter split-orientation="horizontal" split-proportion="0.5">
           <split-first>
@@ -53,8 +53,8 @@
               <file leaf-file-name="recipes_controller.rb" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-0.00486618">
-                      <caret line="313" column="5" selection-start-line="313" selection-start-column="5" selection-end-line="313" selection-end-column="5" />
+                    <state vertical-scroll-proportion="0.5180723">
+                      <caret line="302" column="23" selection-start-line="302" selection-start-column="23" selection-end-line="302" selection-end-column="23" />
                       <folding>
                         <element signature="e#499#3379#0" expanded="false" />
                         <element signature="e#3503#5518#0" expanded="false" />
@@ -69,7 +69,6 @@
                         <element signature="e#6604#6641#0" expanded="false" />
                         <element signature="e#6792#7525#0" expanded="false" />
                         <element signature="e#7478#7521#0" expanded="false" />
-                        <element signature="e#8041#8587#0" expanded="false" />
                       </folding>
                     </state>
                   </provider>
@@ -79,22 +78,16 @@
           </split-first>
           <split-second>
             <leaf>
-              <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/app/views/recipes/index.html.erb">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-9.807693">
-                      <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
               <file leaf-file-name="recipes.css.scss" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/recipes.css.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.6025974">
-                      <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-                      <folding />
+                    <state vertical-scroll-proportion="2.3411016">
+                      <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+                      <folding>
+                        <marker date="1460733125347" expanded="true" signature="204:235" placeholder="..." />
+                        <marker date="1460733125347" expanded="true" signature="239:488" placeholder="..." />
+                        <marker date="1460733125347" expanded="true" signature="265:488" placeholder="..." />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -180,7 +173,6 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/views/recipes/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.sass" />
         <option value="$PROJECT_DIR$/app/views/recipes/recipe_list.html" />
         <option value="$PROJECT_DIR$/app/views/recipes/recipe_list.html.erb" />
@@ -190,8 +182,10 @@
         <option value="$PROJECT_DIR$/app/views/recipes/new.html.erb" />
         <option value="$PROJECT_DIR$/app/models/recipe2_ingredient.rb" />
         <option value="$PROJECT_DIR$/app/views/recipes/home.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/recipes.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/recipes/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/recipes_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/recipes/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/recipes.css.scss" />
       </list>
     </option>
   </component>
@@ -939,14 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recipes/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8597403">
@@ -955,26 +941,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/recipes.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/recipes/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6025974">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        <state vertical-scroll-proportion="-12.961538">
+          <caret line="39" column="14" selection-start-line="21" selection-start-column="8" selection-end-line="39" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/recipes/home.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/recipes.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15584415">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state vertical-scroll-proportion="2.3411016">
+          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+          <folding>
+            <marker date="1460733125347" expanded="true" signature="204:235" placeholder="..." />
+            <marker date="1460733125347" expanded="true" signature="239:488" placeholder="..." />
+            <marker date="1460733125347" expanded="true" signature="265:488" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recipes/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43220338">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/recipes/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9004237">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.00486618">
-          <caret line="313" column="5" selection-start-line="313" selection-start-column="5" selection-end-line="313" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.5180723">
+          <caret line="302" column="23" selection-start-line="302" selection-start-column="23" selection-end-line="302" selection-end-column="23" />
           <folding>
             <element signature="e#499#3379#0" expanded="false" />
             <element signature="e#3503#5518#0" expanded="false" />
@@ -989,7 +995,6 @@
             <element signature="e#6604#6641#0" expanded="false" />
             <element signature="e#6792#7525#0" expanded="false" />
             <element signature="e#7478#7521#0" expanded="false" />
-            <element signature="e#8041#8587#0" expanded="false" />
           </folding>
         </state>
       </provider>

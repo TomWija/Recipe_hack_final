@@ -1,9 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Recipe name:</strong>
-  <%= @recipe.recipe_name %>
-</p>
+<div class="selected-recipe">
+  <h2><%= @recipe.recipe_name %></h2>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Ingredient</th>
+      <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @ing_quant_pairs.each do |(ing, quant)| %>
+        <tr>
+          <td><%= ing %></td>
+          <td><%= quant %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

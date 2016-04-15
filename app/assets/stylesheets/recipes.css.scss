@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Welcome message stuff
 .welcome-message > p > a:hover {
-  color: #FFFFFF!important;
+  color: #FFFFFF !important;
   background-color: #009c7b;
   text-decoration: none;
   font-weight: bold;
@@ -19,6 +20,7 @@
   font-weight: bold;
 }
 
+// Random-recipe box stuff
 .random-recipe {
   width: 80%;
   margin: auto;
@@ -44,4 +46,39 @@
 th {
   text-align: center !important;
   font-size: 16px;
+}
+
+// recipe list stuff
+.recipe-list {
+  width: 100%;
+  text-align: center;
+}
+
+.recipe-list > table {
+  width: 65%;
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  color: #2E2F30;
+}
+
+// Show recipe stuff
+.selected-recipe {
+  width: 70%;
+  border: 1px dotted #000000;
+  background-color: #009c7b;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+}
+
+.selected-recipe > h2 {
+  margin: 5px;
+}
+
+.selected-recipe > table {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  color: #2E2F30;
 }

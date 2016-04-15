@@ -287,25 +287,22 @@ class RecipesController < ApplicationController
 
   def home
     @random_recipe = Recipe.order("RANDOM()").first
-    @ing_quant_pairs = []
+    @ing_quant_pairs = get_recipe_ingredients(@random_recipe)
 
     # Get all the ingredient ids linked to the recipe id and their quantities.
-    Recipe2Ingredient.where(recipe_id: @random_recipe.id).each do |link_id|
-      puts ' LINK ID: ' + link_id.to_s
-      puts ' LINK ID ING ID: ' + link_id.ing_id.to_s
-
-      ing = Ingredient.find(link_id.ing_id).ing_name
-      quant = link_id.quantity
-
-      puts 'Ingredient: ' + ing.to_s + ' ID: ' + link_id.ing_id.to_s
-
-      @ing_quant_pairs.push([ing, quant])
-    end
+    # Recipe2Ingredient.where(recipe_id: @random_recipe.id).each do |link_id|
+    #
+    #   ing = Ingredient.find(link_id.ing_id).ing_name
+    #   quant = link_id.quantity
+    #
+    #   @ing_quant_pairs.push([ing, quant])
+    # end
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @ing_quant_pairs = get_recipe_ingredients(@recipe)
   end
 
   # GET /recipes/new
@@ -366,5 +363,18 @@ class RecipesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
       params.require(:recipe).permit(:recipe_name)
+    end
+
+    # get the ingredient/quantity pairs for a recipe
+    def get_recipe_ingredients(recipe)
+      ing_quant_pairs = []
+      Recipe2Ingredient.where(recipe_id: recipe.id).each do |link_id|
+
+        ing = Ingredient.find(link_id.ing_id).ing_name
+        quant = link_id.quantity
+
+        ing_quant_pairs.push([ing, quant])
+      end
+      ing_quant_pairs
     end
 end
