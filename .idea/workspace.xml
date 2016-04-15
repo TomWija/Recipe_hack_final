@@ -14,7 +14,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Recipe_hack_final@Development__Recipe_hack_final.coverage" NAME="Development: Recipe_hack_final Coverage Results" MODIFIED="1460742257877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
+    <SUITE FILE_PATH="coverage/Recipe_hack_final@Development__Recipe_hack_final.coverage" NAME="Development: Recipe_hack_final Coverage Results" MODIFIED="1460748180584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
     <SUITE FILE_PATH="coverage/Recipe_hack_final@db_migrate__Recipe_hack_final.coverage" NAME="db:migrate: Recipe_hack_final Coverage Results" MODIFIED="1460728157230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -45,23 +45,22 @@
     <favorites_list name="Recipe_hack_final" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.70446736">
+    <splitter split-orientation="vertical" split-proportion="0.6386207">
       <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.5">
+        <splitter split-orientation="horizontal" split-proportion="0.5590062">
           <split-first>
             <leaf>
               <file leaf-file-name="recipes_controller.rb" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.5042017">
-                      <caret line="206" column="55" selection-start-line="206" selection-start-column="55" selection-end-line="206" selection-end-column="55" />
+                    <state vertical-scroll-proportion="2.3375">
+                      <caret line="438" column="6" selection-start-line="438" selection-start-column="6" selection-end-line="438" selection-end-column="6" />
                       <folding>
-                        <element signature="e#499#3379#0" expanded="false" />
-                        <element signature="e#3503#5518#0" expanded="false" />
-                        <element signature="e#4442#4485#0" expanded="false" />
-                        <element signature="e#4700#4732#0" expanded="false" />
-                        <element signature="e#4736#4888#0" expanded="false" />
-                        <element signature="e#5194#5514#0" expanded="false" />
+                        <element signature="e#4448#4491#0" expanded="false" />
+                        <element signature="e#4708#4740#0" expanded="false" />
+                        <element signature="e#4744#4896#0" expanded="false" />
+                        <element signature="e#5204#5524#0" expanded="false" />
+                        <element signature="e#12258#12586#0" expanded="false" />
                       </folding>
                     </state>
                   </provider>
@@ -94,14 +93,13 @@
               <file leaf-file-name="recipes_controller.rb" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="4.462185">
-                      <caret line="290" column="6" selection-start-line="290" selection-start-column="6" selection-end-line="296" selection-end-column="7" />
+                    <state vertical-scroll-proportion="0.1958042">
+                      <caret line="166" column="23" selection-start-line="166" selection-start-column="23" selection-end-line="166" selection-end-column="23" />
                       <folding>
-                        <element signature="e#499#3379#0" expanded="false" />
-                        <element signature="e#4442#4485#0" expanded="false" />
-                        <element signature="e#4700#4732#0" expanded="false" />
-                        <element signature="e#4736#4888#0" expanded="false" />
-                        <element signature="e#5194#5514#0" expanded="false" />
+                        <element signature="e#501#3381#0" expanded="false" />
+                        <element signature="e#4448#4491#0" expanded="false" />
+                        <element signature="e#4708#4740#0" expanded="false" />
+                        <element signature="e#4744#4896#0" expanded="false" />
                       </folding>
                     </state>
                   </provider>
@@ -928,19 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..ingredients">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8597403">
@@ -993,6 +978,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..recipes">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/recipes/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
@@ -1009,7 +1007,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..recipes">
+    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..ingredients">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1037,15 +1035,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5042017">
-          <caret line="206" column="55" selection-start-line="206" selection-start-column="55" selection-end-line="206" selection-end-column="55" />
+        <state vertical-scroll-proportion="2.3375">
+          <caret line="438" column="6" selection-start-line="438" selection-start-column="6" selection-end-line="438" selection-end-column="6" />
           <folding>
-            <element signature="e#499#3379#0" expanded="false" />
-            <element signature="e#3503#5518#0" expanded="false" />
-            <element signature="e#4442#4485#0" expanded="false" />
-            <element signature="e#4700#4732#0" expanded="false" />
-            <element signature="e#4736#4888#0" expanded="false" />
-            <element signature="e#5194#5514#0" expanded="false" />
+            <element signature="e#4448#4491#0" expanded="false" />
+            <element signature="e#4708#4740#0" expanded="false" />
+            <element signature="e#4744#4896#0" expanded="false" />
+            <element signature="e#5204#5524#0" expanded="false" />
+            <element signature="e#12258#12586#0" expanded="false" />
           </folding>
         </state>
       </provider>
