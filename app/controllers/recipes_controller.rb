@@ -203,10 +203,18 @@ class Population
         save_sandwich(i, new_sandwich)
       end
     elsif not(ings == nil) # Recipes containing mentioned ingredients
-      puts 'DIRECTED BY INGREDIENT'
-      unformatted_recipes = Yummly.search(ings)
-      puts 'Test with ' + ings + ' resulted in ' + unformatted_recipes.total.to_s + ' recipes'
+      result = Yummly.search(ings)
+      yummly_recipes = result.collect{ |recipe| recipe }
+      (0...size).each do |i|
+        puts "RESULTS: " + yummly_recipes[i].to_s
+      end
     end
+  end
+
+  # If yummly search was done, take ingredients and build a sandwich
+  def build_sandwich(ingredients)
+
+
   end
 
   # TODO: Maybe need to fix this
@@ -325,19 +333,15 @@ class RecipesController < ApplicationController
   def create
     # RECIPE CREATING
     if recipe_params.fetch('recipe_name').blank?
-      puts "NAME WAS BLANK"
       my_pop = Population.new(10, true)
     else # If an ingredient was, given have initial pop be from Yummly
-      puts "NAME WAS GOOD"
       my_pop = Population.new(10, false, recipe_params.fetch('recipe_name'))
     end
 
-    # (0...10).each do |i|
-    #   my_pop = Algorithm.evolve_population(my_pop)
-    # end
-    # best_sandwich = my_pop.get_best_sandwich
-    #
-    # puts "RECIPE PARAMS: " + recipe_params.fetch('recipe_name')
+    (0...10).each do |i|
+       my_pop = Algorithm.evolve_population(my_pop)
+    end
+    best_sandwich = my_pop.get_best_sandwich
 
     # RECIPE SAVING
     @recipe = Recipe.new(recipe_params)
