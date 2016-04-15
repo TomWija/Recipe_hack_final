@@ -20,8 +20,23 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="random-recipe">
-            <h2><%= @random_recipe %></h2>
-
+            <h2><%= @random_recipe.recipe_name %></h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Ingredient</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @ing_quant_pairs.each do |(ing, quant)| %>
+                            <tr>
+                              <td><%= ing %></td>
+                              <td><%= quant %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
         </div>
     </div>
 </div>

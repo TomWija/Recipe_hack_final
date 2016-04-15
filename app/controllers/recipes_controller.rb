@@ -286,7 +286,21 @@ class RecipesController < ApplicationController
   end
 
   def home
-    @random_recipe = Recipe.find(1).recipe_name
+    @random_recipe = Recipe.order("RANDOM()").first
+    @ing_quant_pairs = []
+
+    # Get all the ingredient ids linked to the recipe id and their quantities.
+    Recipe2Ingredient.where(recipe_id: @random_recipe.id).each do |link_id|
+      puts ' LINK ID: ' + link_id.to_s
+      puts ' LINK ID ING ID: ' + link_id.ing_id.to_s
+
+      ing = Ingredient.find(link_id.ing_id).ing_name
+      quant = link_id.quantity
+
+      puts 'Ingredient: ' + ing.to_s + ' ID: ' + link_id.ing_id.to_s
+
+      @ing_quant_pairs.push([ing, quant])
+    end
   end
 
   # GET /recipes/1

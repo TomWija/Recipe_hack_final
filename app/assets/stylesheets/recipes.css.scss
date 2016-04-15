@@ -20,15 +20,28 @@
 }
 
 .random-recipe {
-  width: 70%;
+  width: 80%;
   margin: auto;
   border: 1px dotted #000000;
-  background-color: #ffffff;
-  color: #2e2e2e;
+  background-color: #009c7b;
+  color: #FFFFFF;
   text-decoration: none;
   text-align: center;
 }
 
 .random-recipe > h2 {
   margin: 5px;
+}
+
+.random-recipe > table {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  color: #2E2F30;
+}
+
+th {
+  text-align: center !important;
+  font-size: 16px;
 }
