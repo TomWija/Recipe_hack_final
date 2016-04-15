@@ -14,7 +14,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Recipe_hack_final@Development__Recipe_hack_final.coverage" NAME="Development: Recipe_hack_final Coverage Results" MODIFIED="1460748180584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
+    <SUITE FILE_PATH="coverage/Recipe_hack_final@Development__Recipe_hack_final.coverage" NAME="Development: Recipe_hack_final Coverage Results" MODIFIED="1460751588309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
     <SUITE FILE_PATH="coverage/Recipe_hack_final@db_migrate__Recipe_hack_final.coverage" NAME="db:migrate: Recipe_hack_final Coverage Results" MODIFIED="1460728157230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="Recipe_hack_final" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -45,7 +45,7 @@
     <favorites_list name="Recipe_hack_final" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.6386207">
+    <splitter split-orientation="vertical" split-proportion="0.63448274">
       <split-first>
         <splitter split-orientation="horizontal" split-proportion="0.5590062">
           <split-first>
@@ -53,14 +53,14 @@
               <file leaf-file-name="recipes_controller.rb" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="2.3375">
-                      <caret line="438" column="6" selection-start-line="438" selection-start-column="6" selection-end-line="438" selection-end-column="6" />
+                    <state vertical-scroll-proportion="0.57178843">
+                      <caret line="232" column="55" selection-start-line="232" selection-start-column="55" selection-end-line="232" selection-end-column="55" />
                       <folding>
                         <element signature="e#4448#4491#0" expanded="false" />
                         <element signature="e#4708#4740#0" expanded="false" />
                         <element signature="e#4744#4896#0" expanded="false" />
                         <element signature="e#5204#5524#0" expanded="false" />
-                        <element signature="e#12258#12586#0" expanded="false" />
+                        <element signature="e#12073#12377#0" expanded="false" />
                       </folding>
                     </state>
                   </provider>
@@ -93,7 +93,7 @@
               <file leaf-file-name="recipes_controller.rb" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.1958042">
+                    <state vertical-scroll-proportion="2.2323945">
                       <caret line="166" column="23" selection-start-line="166" selection-start-column="23" selection-end-line="166" selection-end-column="23" />
                       <folding>
                         <element signature="e#501#3381#0" expanded="false" />
@@ -110,7 +110,7 @@
         </splitter>
       </split-first>
       <split-second>
-        <splitter split-orientation="horizontal" split-proportion="0.5">
+        <splitter split-orientation="horizontal" split-proportion="0.52024925">
           <split-first>
             <leaf>
               <file leaf-file-name="recipes" pinned="false" current-in-tab="false">
@@ -709,7 +709,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19270833" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13645834" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13854167" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2548818" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -913,19 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..recipe2_ingredients">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8597403">
@@ -978,15 +965,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..recipes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
+    <entry file="file://$PROJECT_DIR$/config/initializers/yummly.rb">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -995,14 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/yummly.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -1020,7 +994,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..sqlite_sequence">
+    <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57178843">
+          <caret line="232" column="55" selection-start-line="232" selection-start-column="55" selection-end-line="232" selection-end-column="55" />
+          <folding>
+            <element signature="e#4448#4491#0" expanded="false" />
+            <element signature="e#4708#4740#0" expanded="false" />
+            <element signature="e#4744#4896#0" expanded="false" />
+            <element signature="e#5204#5524#0" expanded="false" />
+            <element signature="e#12073#12377#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..recipes">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -1033,17 +1021,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/recipes_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3375">
-          <caret line="438" column="6" selection-start-line="438" selection-start-column="6" selection-end-line="438" selection-end-column="6" />
-          <folding>
-            <element signature="e#4448#4491#0" expanded="false" />
-            <element signature="e#4708#4740#0" expanded="false" />
-            <element signature="e#4744#4896#0" expanded="false" />
-            <element signature="e#5204#5524#0" expanded="false" />
-            <element signature="e#12258#12586#0" expanded="false" />
-          </folding>
+    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..recipe2_ingredients">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/cfa73497/7e0f0784-e4d0-435a-93ae-9e43ed2a67df/..sqlite_sequence">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

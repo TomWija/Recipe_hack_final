@@ -230,10 +230,13 @@ class Population
   # If yummly search was done, take ingredients and build a sandwich
   def build_sandwich(ingredients)
     sandwich = Sandwich.new
+    sandwich.set_gene(0, 2) # make sure there is bread!
     ingredients.each do |ing|
       gene_index = Ingredient.find_by(ing_name: ing).id - 1 #offset for db starting at 1
       sandwich.set_gene(gene_index, 1) # add one of the chosen ingredient
     end
+    sandwich.get_fitness
+    sandwich
   end
 
   # TODO: Maybe need to fix this
@@ -364,11 +367,11 @@ class RecipesController < ApplicationController
     best_sandwich = my_pop.get_best_sandwich
 
     # RECIPE SAVING
-    @recipe = Recipe.new(name_maker(best_sandwich))
+    @recipe = Recipe.new({ "recipe_name" => name_maker(best_sandwich) })
 
     respond_to do |format|
       if @recipe.save
-        save_ing_links(@recipe.id, best_sandwich)
+        save_ing_links(@recipe.id, best_sandwich.get_genes)
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render :show, status: :created, location: @recipe }
       else
@@ -428,14 +431,21 @@ class RecipesController < ApplicationController
 
     def name_maker(sandwich)
       ing_ids = sandwich.ing_db_keys
-      name = Ingredient.find_by(ing_ids[rand(ing_ids.size)]).to_s + ', '
-      name += Ingredient.find_by(ing_ids[rand(ing_ids.size)]).to_s + ' and '
-      name += Ingredient.find_by(ing_ids[rand(ing_ids.size)]).to_s + ' '
+
+      name = Ingredient.find(ing_ids[rand(ing_ids.size)]).ing_name + ', '
+      name += Ingredient.find(ing_ids[rand(ing_ids.size)]).ing_name + ' and '
+      name += Ingredient.find(ing_ids[rand(ing_ids.size)]).ing_name + ' '
       name += 'sandwich'
       name
     end
 
     def save_ing_links(recipe_id, sandwich_genes)
-      
+      rec_id = recipe_id
+      (0...sandwich_genes.size).each do |i|
+        ingredient_id = i+1
+        if sandwich_genes[i] > 0
+          Recipe2Ingredient.create!(ing_id: ingredient_id, recipe_id: rec_id, quantity: sandwich_genes[i])
+        end
+      end
     end
 end
