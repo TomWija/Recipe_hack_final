@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query_name: MyString
+  fitness: 1
+
+two:
+  query_name: MyString
+  fitness: 1
