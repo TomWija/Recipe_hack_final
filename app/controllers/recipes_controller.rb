@@ -189,17 +189,23 @@ end
 # A population is a collection of sandwich recipes
 # These sandwich's will be chosen to mutate and create new recipes for a new generation
 class Population
+  require('yummly') # for recipe and ingredient population
   @sandwiches = []
 
-  def initialize(pop_size, generate_recipes)
+  def initialize(pop_size, generate_recipes=false, ings=nil)
     @sandwiches = Array.new(pop_size, Sandwich.new)
 
-    if generate_recipes
+    if generate_recipes && ings == nil # Entirely random recipes
+      puts 'ENTIRELY RANDOM'
       (0...size).each do |i|
         new_sandwich = Sandwich.new
         new_sandwich.generate_sandwich
         save_sandwich(i, new_sandwich)
       end
+    elsif not(ings == nil) # Recipes containing mentioned ingredients
+      puts 'DIRECTED BY INGREDIENT'
+      unformatted_recipes = Yummly.search(ings)
+      puts 'Test with ' + ings + ' resulted in ' + unformatted_recipes.total.to_s + ' recipes'
     end
   end
 
@@ -318,15 +324,20 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     # RECIPE CREATING
-
-    # If an ingredient was given have initial pop be from Yummly
-    my_pop = Population.new(10, true)
-    (0...10).each do |i|
-      my_pop = Algorithm.evolve_population(my_pop)
+    if recipe_params.fetch('recipe_name').blank?
+      puts "NAME WAS BLANK"
+      my_pop = Population.new(10, true)
+    else # If an ingredient was, given have initial pop be from Yummly
+      puts "NAME WAS GOOD"
+      my_pop = Population.new(10, false, recipe_params.fetch('recipe_name'))
     end
-    best_sandwich = my_pop.get_best_sandwich
 
-    puts "RECIPE PARAMS: " + recipe_params.fetch('recipe_name')
+    # (0...10).each do |i|
+    #   my_pop = Algorithm.evolve_population(my_pop)
+    # end
+    # best_sandwich = my_pop.get_best_sandwich
+    #
+    # puts "RECIPE PARAMS: " + recipe_params.fetch('recipe_name')
 
     # RECIPE SAVING
     @recipe = Recipe.new(recipe_params)
