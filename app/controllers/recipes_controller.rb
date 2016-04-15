@@ -317,8 +317,19 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
+    # RECIPE CREATING
 
+    # If an ingredient was given have initial pop be from Yummly
+    my_pop = Population.new(10, true)
+    (0...10).each do |i|
+      my_pop = Algorithm.evolve_population(my_pop)
+    end
+    best_sandwich = my_pop.get_best_sandwich
+
+    puts "RECIPE PARAMS: " + recipe_params.fetch('recipe_name')
+
+    # RECIPE SAVING
+    @recipe = Recipe.new(recipe_params)
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
