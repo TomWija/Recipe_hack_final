@@ -38,13 +38,37 @@
 
 <div id="main-container" class="container">
     <div class="row">
-      <div id="sidebar" class="col-sm-3">
-        <h1>Recipe-Hack</h1>
+      <div id="sidebar" class="col-sm-2">
+        <div class="logo">
+            <img src="http://i.imgur.com/4eU4wAB.png">
+        </div>
       </div>
-      <div id="main-content" class="col-sm-9">
+      <div id="main-content" class="col-sm-10">
         <%= yield %>
       </div>
     </div>
+</div>
+
+<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+  <div class="container">
+    <div class="navbar-text pull-left">
+      <p>(c) 2016 Thomas Wija</p>
+    </div>
+    <div class="navbar-text pull-right">
+      <div class="tech-used"><a href="https://www.ruby-lang.org/en/"><img src="http://i.imgur.com/rcLhcBi.png"></a></div> <!-- Ruby -->
+      <div class="tech-used"><a href="http://rubyonrails.org/"><img src="http://i.imgur.com/i94548y.png"></a></div> <!-- Rails -->
+      <div class="tech-used"><a href="https://www.jetbrains.com/ruby/"><img src="http://i.imgur.com/IZxXUQF.png"></a></div> <!-- RM -->
+
+      <div class="tech-used"><a href="http://www.github.com"><img src="http://i.imgur.com/4HTV2M6.png"></a></div> <!-- Github -->
+      <div class="tech-used"><a href="http://getbootstrap.com/"><img src="http://i.imgur.com/i6b4jvy.png"></a></div> <!-- BS -->
+
+      <div class="tech-used"><a href="https://www.w3.org/html/"><img src="http://i.imgur.com/QMMIqGW.png"></a></div> <!-- HTML -->
+      <div class="tech-used"><a href="https://www.w3.org/Style/CSS/"><img src="http://i.imgur.com/EqZyjrQ.png"></a></div> <!-- CSS -->
+      <div class="tech-used"><a href="#"><img src="http://i.imgur.com/qzCh0we.png"></a></div> <!-- JS -->
+
+      <div class="tech-used-sql"><a href="https://www.sqlite.org/"><img src="http://i.imgur.com/E6GeNWz.png"></a></div> <!-- Sqlite -->
+    </div>
+  </div>
 </div>
 
 </body>

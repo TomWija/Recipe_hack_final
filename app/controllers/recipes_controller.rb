@@ -27,10 +27,10 @@ class Algorithm
       sandwich1 = tournament_selection(pop)
       sandwich2 = tournament_selection(pop)
 
-      # TODO: Uncomment after finishing crossover.
       if rand <= CROSSOVER_RATE # If they are selected to breed, cross them over.
-        co_sandwich1 = sandwich1 #crossover(sandwich1, sandwich2)
-        co_sandwich2 = sandwich2 #crossover(sandwich1, sandwich2)
+        crossed_over = crossover(sandwich1, sandwich2)
+        co_sandwich1 = crossed_over[0]
+        co_sandwich2 = crossed_over[1]
       else # The 'crossed over' sandwiches are the same
         co_sandwich1 = sandwich1
         co_sandwich2 = sandwich2
@@ -67,10 +67,43 @@ class Algorithm
 
   # TODO: Code logic for crossover
   def self.crossover(sandwich1, sandwich2)
-    sandwich1_split = sandwich1.in_groups(6, false)
-    sandwich2_split = sandwich2.in_groups(6, false)
+    sandwich1_split = sandwich1.get_genes.in_groups(@@ing_database_size/5, false) #{|group| p group}
+    sandwich2_split = sandwich2.get_genes.in_groups(@@ing_database_size/5, false) #{|group| p group}
+
+    genome_pairs = sandwich1_split.zip sandwich2_split
+    co_pairs = []
+
+    # For every set of genome pairs, choose a random crossover point
+    genome_pairs.each do |genome1, genome2|
+      co_point = rand(genome1.size)
+
+      co_genome1 = genome1.first(co_point) + genome2.last(genome2.size-co_point)
+      co_genome2 = genome2.first(co_point) + genome1.last(genome1.size-co_point)
+
+      pair_array = []
+      pair_array.push(co_genome1) # make the genomes into a pair
+      pair_array.push(co_genome2)
+      co_pairs.push(pair_array) # push the pair into the list of existing one
+    end
+
+    co_genes1 = []; co_genes2 = []
+    co_pairs.each do |genome1, genome2|
+      co_genes1.push(genome1)
+      co_genes2.push(genome2)
+    end
+
+    co_sandwich1 = Sandwich.new
+    co_genes1.flatten!
+    puts co_genes1.inspect
+    co_sandwich1.build_sandwich(co_genes1)
 
 
+    co_sandwich2 = Sandwich.new
+    co_genes2.flatten!
+    puts co_genes2.inspect
+    co_sandwich2.build_sandwich(co_genes2)
+
+    return co_sandwich1, co_sandwich2
   end
 
   def self.mutate(sandwich)
@@ -86,7 +119,6 @@ class Algorithm
         end
       end
 
-      # TODO: Weird array issue, not hugely important for testing.
       gene = sandwich.get_gene(i)
       inc_or_dec = rand
       if rand <= MICRO_MUTATION_RATE && gene > 0 # can only micro mutate existing ingredients
@@ -107,6 +139,12 @@ class Sandwich
     @gene_length = GENE_LENGTH
     @fitness = 0
     @genes = Array.new(@@ing_database_size, 0)
+  end
+
+  def build_sandwich(gene_array)
+    (0...gene_array.size).each do |i|
+      @genes[i] = gene_array[i]
+    end
   end
 
   def generate_sandwich
@@ -308,17 +346,6 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    # require('benchmark')
-    #
-    # @times = Benchmark.measure {
-    # my_pop = Population.new(10, true)
-    # (0...15).each do |i|
-    #   my_pop = Algorithm.evolve_population(my_pop)
-    # end
-    # best_sandwich = my_pop.get_best_sandwich
-    # @sandwich_string = best_sandwich.get_query_string
-    # }
-
     @recipes = Recipe.all
   end
 
@@ -361,7 +388,7 @@ class RecipesController < ApplicationController
       my_pop = Population.new(10, false, recipe_params.fetch('recipe_name'))
     end
 
-    (0...5).each do |i|
+    (0...10).each do |i|
        my_pop = Algorithm.evolve_population(my_pop)
     end
     best_sandwich = my_pop.get_best_sandwich
